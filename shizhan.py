@@ -7,11 +7,8 @@ def index3():
     if request.method == 'POST':
         password = request.form.get("password")#需要通过request来联动到表单form，再加上get以获取html里面的form表单内部的东西（name、passpord等）
         if password == "123456":
-            print('welcome to the wide world of web!')
-            print('今天的内容是因特网聊天室')
-
-
-            return "login success, u so strong"
+            result = 'welcome to the wide world of web!'
+            return render_template('index3.html', result=result)
         else:
             return "密码错误"
             # return abort(404)
